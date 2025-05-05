@@ -1,0 +1,1 @@
+# minegabu.github.io
