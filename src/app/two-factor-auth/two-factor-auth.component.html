@@ -1,0 +1,68 @@
+<form class="codeinput" #container>
+  <div class="focused-input" #border></div>
+  <input
+    #inputs
+    autocomplete="off"
+    maxlength="1"
+    id="1"
+    placeholder="X"
+    tabindex="0"
+    (beforeinput)="moveFocus($event, 1, 6)"
+    (focus)="focus(0)"
+  />
+  <input
+    type="tel"
+    #inputs
+    maxlength="1"
+    placeholder="X"
+    id="2"
+    tabindex="1"
+    (beforeinput)="moveFocus($event, 2, 0)"
+    (focus)="focus(1)"
+  />
+  <input
+    type="tel"
+    #inputs
+    maxlength="1"
+    placeholder="X"
+    id="3"
+    tabindex="2"
+    (beforeinput)="moveFocus($event, 3, 1)"
+    (focus)="focus(2)"
+  />
+  <p class="dash">-</p>
+  <input
+    type="tel"
+    #inputs
+    maxlength="1"
+    placeholder="X"
+    id="4"
+    tabindex="3"
+    (beforeinput)="moveFocus($event, 4, 2)"
+    (focus)="focus(3)"
+  />
+  <input
+    type="tel"
+    #inputs
+    maxlength="1"
+    placeholder="X"
+    id="5"
+    tabindex="4"
+    (beforeinput)="moveFocus($event, 5, 3)"
+    (focus)="focus(4)"
+  />
+  <input
+    type="tel"
+    #inputs
+    maxlength="1"
+    placeholder="X"
+    id="6"
+    tabindex="5"
+    (beforeinput)="moveFocus($event, 6, 4); getFormValue()"
+    (focus)="focus(5)"
+  />
+</form>
+
+    <div class="flex justify-content-center align-items-center mr-4">
+
+    </div>

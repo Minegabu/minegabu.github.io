@@ -1,0 +1,81 @@
+.switch {
+  background-color: rgb(0 0 0 / 25%);
+  border: white 1px solid;
+  border-radius: 22px;
+  cursor: pointer;
+  display: inline-block;
+  height: 24px;
+  position: relative;
+  transition: all 0.3s;
+  width: 46px;
+}
+
+.switch::after {
+  background-color: rgb(18,18,18);
+  border-radius: 20px;
+  content: "";
+  height: 20px;
+  left: 1px;
+  position: absolute;
+  top: 1px;
+  transition: all 0.3s;
+  width: 22px;
+}
+
+input[type="checkbox"]:not(:checked) + .switch {
+  background-color: #f9f9f9;
+  border: #fccf03 1px solid;
+}
+
+input[type="checkbox"]:not(:checked) + .switch::after {
+  background-color: white;
+}
+
+input[type="checkbox"]:checked + .switch::after {
+  background-color: #373945;
+  transform: translateX(20px);
+}
+
+input[type="checkbox"]:checked + .switch {
+  background-color: black;
+  border: white 1px solid;
+}
+
+.offscreen {
+  left: -9999px;
+  position: absolute;
+}
+
+.position {
+  color: white;
+  font-size: 12px;
+  left: 26px;
+  position: absolute;
+  top: 8px;
+  z-index: 10;
+}
+
+.position2 {
+  color: #e0bb00;
+  font-size: 2.5px;
+  left: 36px;
+  position: absolute;
+  top: 8px;
+  z-index: 10;
+}
+
+.position3 {
+  color: #e0bb00;
+  font-size: 2px;
+  left: 33px;
+  position: absolute;
+  top: 4px;
+  z-index: 10;
+}
+
+.position4 {
+  left: 6px;
+  position: absolute;
+  top: 5px;
+  z-index: 10;
+}

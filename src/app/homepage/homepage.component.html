@@ -1,0 +1,164 @@
+<div class="full">
+  <!-- SVG code as before -->
+  <div class="z-index fullpage">
+    <svg
+      version="1.1"
+      id="Layer_1"
+      xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      width="80%"
+      height="80%"
+      viewBox="0 0 54 65"
+      enable-background="new 0 0 54 65"
+      xml:space="preserve"
+    >
+      <g id="Page-1" sketch:type="MSPage">
+        <g
+          id="Cat"
+          transform="translate(1.000000, 2.000000)"
+          sketch:type="MSLayerGroup"
+        >
+          <path
+            class="draw-path"
+            id="Shape"
+            sketch:type="MSShapeGroup"
+            fill="none"
+            stroke="#6B6C6E"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M42.3,54.2c0-1-1.9-6.1,3.9-14.2S51,28.9,51,25.8"
+          />
+
+          <path
+            class="draw-path"
+            id="Shape_2_"
+            sketch:type="MSShapeGroup"
+            fill="none"
+            stroke="#6B6C6E"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M30.3,32.6c7.2,6.8,12.1,17,12.1,23c0,9.7-9.3,5.4-21,5.4S0.1,65.2,0.1,55.6c0-6.1,4.9-16.2,12.1-23"
+          />
+
+          <path
+            class="draw-path"
+            id="Shape_1_"
+            sketch:type="MSShapeGroup"
+            fill="none"
+            stroke="#6B6C6E"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M27.2,33c8.7-1.8,15.1-7.4,15.1-14.1c0-2.9-2-7.2-2.8-8.8C40.4,8.4,41,0.9,39.6,0c-1.5-0.8-8.3,6.4-8.3,6.4
+                                    c-3.2-1.4-6-2.2-10.1-2.2S13.3,5,10.1,6.4c0,0-5.6-7.1-7.1-6.2C1.6,1,1.9,8.1,2.7,10C1.9,11.6,0,16,0,18.9
+                                    C0,25.6,6.4,31.2,15.1,33"
+          />
+        </g>
+      </g>
+    </svg>
+  </div>
+  <div class="mainbody overlay">
+    <div class="blur-bg z-index"></div>
+    <div class="content">
+      <div class="header-container">
+        <h1>Minegabu</h1>
+        <a
+          href="https://github.com/Minegabu"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><i class="pi pi-github"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/gabriel-montelle-401937331/"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><i class="pi pi-linkedin"></i
+        ></a>
+      </div>
+
+      <nav class="navbar">
+        <div
+          (click)="changePage('projects')"
+          [ngClass]="{ active: currentPage() === 'projects' }"
+        >
+          <a>Projects</a>
+          <div class="bottombar"></div>
+        </div>
+        <div
+          (click)="changePage('components')"
+          [ngClass]="{ active: currentPage() === 'components' }"
+        >
+          <a>Components</a>
+          <div class="bottombar"></div>
+        </div>
+        <div
+          (click)="changePage('about')"
+          [ngClass]="{ active: currentPage() === 'about' }"
+        >
+          <a>About me</a>
+          <div class="bottombar"></div>
+        </div>
+      </nav>
+
+      <div class="project-body" *ngIf="currentPage() === 'projects'">
+        <div class="parent-container">
+          <app-component-viewer
+            [imageUrl]="'/image.png'"
+            [description]="'CampoVDR'"
+            style="z-index: 10;"
+            (click)="openOldDialog('/image.png', 'CampoVDR', 'This is the main website for CampoVDR, a virtual data room platform that allows users to securely share and manage sensitive documents online. I was responsible for implementing the frontend and some of the backend of the platform using Angular and Typescript, ensuring a seamless user experience aswell as adding in various animations and interactivity to the site.')"
+          ></app-component-viewer>
+        </div>
+        <app-component-viewer
+          [imageUrl]="'/ocepowerhouse.png'"
+          [description]="'OCE Powerhouse team website'"
+          (click)="openOldDialog('/ocepowerhouse.png', 'OCE Powerhouse team website', 'This website was built for my Overwatch team as a fun way to try new frontend techniques and animations. It was built using React and Javascript.')"
+        ></app-component-viewer>
+        <app-component-viewer
+          [imageUrl]="'/studentcouncilvoting.png'"
+          [description]="'Student Council Voting'"
+          (click)="openOldDialog('/studentcouncilvoting.png', 'Student Council Voting', 'This website was built for my year 13 Digital Technologies project. It was my first introduction into React and Javascript. It allows students to use their email to vote for their Student Council reprensentatives.')"
+        ></app-component-viewer>
+      </div>
+      <app-component-dialog [visible]="dialogVisibleComponent">
+        <img *ngIf="selectedImageComponent" [src]="selectedImageComponent" style="width:100%; height:auto;" />
+        <div *ngIf="selectedDescriptionComponent" class="flexbody"><p>{{selectedDescriptionComponent}}</p></div>
+      </app-component-dialog>
+
+      <!-- Theme dialog uses content projection -->
+      <app-component-dialog [visible]="dialogVisibleTheme" [description]="selectedDescriptionComponent">
+        <app-theme-switcher style="margin-top: 10px;"></app-theme-switcher>
+      </app-component-dialog>
+
+    <app-component-dialog [visible]="dialogVisibleTwoFactorAuth" [description]="selectedDescriptionComponent">
+        <app-two-factor-auth style="margin-top: 10px;"></app-two-factor-auth>
+      </app-component-dialog>
+
+      <app-dialog-component
+        [visible]="dialogVisibleOld"
+        [imageUrl]="selectedImageOld"
+        [description]="selectedDescriptionOld"
+        [mainDescription]="selectedMainDescriptionOld"
+      ></app-dialog-component>
+      <div class="component-body" *ngIf="currentPage() === 'components'">
+        <app-component-viewer
+          [imageUrl]="'/2fa.png'"
+          [description]="'2FA'"
+          (click)="openTwoFactorDialog()"
+        ></app-component-viewer>
+        <app-component-viewer
+          [imageUrl]="'/switch.png'"
+          [description]="'Theme Switcher'"
+          (click)="openThemeDialog()"
+        ></app-component-viewer>
+      </div>
+      <div *ngIf="currentPage() === 'about'">
+        <p class="margin">I’m a frontend-focused software engineer with over two years of experience building and leading production web platforms. I care deeply about clean CSS, modern JavaScript, thoughtful UX, and shipping interfaces that feel fast, intuitive, and polished.</p>
+      </div>
+    </div>
+  </div>
+</div>
+

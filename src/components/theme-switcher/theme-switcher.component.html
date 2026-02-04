@@ -1,0 +1,27 @@
+<input
+  type="checkbox"
+  id="toggle"
+  class="offscreen"
+  (click)="setSwitch(); toggleDarkMode()"
+  [checked]="switch()"
+/>
+<label for="toggle" class="switch">
+  <img
+    src="mewn.svg"
+    height="8px"
+    width="8px"
+    class="pi pi-moon position"
+    *ngIf="switch()"
+    alt="moon"
+  />
+  <span class="pi pi-star-fill position2" *ngIf="switch()"></span>
+  <span class="pi pi-star-fill position3" *ngIf="switch()"></span>
+  <img
+    src="sun.svg"
+    height="12px"
+    width="12px"
+    class="pi pi-moon position4"
+    *ngIf="!switch()"
+    alt="sun"
+  />
+</label>

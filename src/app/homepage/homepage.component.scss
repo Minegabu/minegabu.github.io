@@ -1,0 +1,214 @@
+
+
+
+.centered--active {
+
+}
+
+    
+.full {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(18,18,18);
+    height: 100vh;
+    position: relative;
+}
+
+
+.margin {
+    margin-right: 20%;
+    margin-left: 20%;
+    font-size: 20px;
+}
+
+path {
+    stroke: white;
+}
+
+body {
+    margin: 0px!important;
+}
+
+.draw-path {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: draw 4s forwards;
+}
+
+.draw-path:nth-child(1) {
+    animation-delay: 2  s;
+}
+.draw-path:nth-child(2) {
+    animation-delay: 1s;
+}
+.draw-path:nth-child(3) {
+    animation-delay: 0s;
+}
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+
+    }
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        background: rgba(0, 0, 0, 0.6);
+        opacity: 1;
+    }
+}
+
+.mainbody {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    text-align: center;
+    animation: fadeIn 3.5s ease-in-out forwards;
+    color: white;
+    font-family: 'Rethink Sans', sans-serif;
+}
+
+.z-index {
+    position: relative;
+    z-index: 0;
+}
+
+.fullpage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.navbar > * {
+    padding: 10px;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar > *:hover > .bottombar{
+    position: relative;
+    width: 100%;
+    transition: width 300ms ease-in-out;
+
+}
+
+.navbar:has(div:hover) > .active:not(:hover) > .bottombar{
+    opacity: 0;
+}
+
+.parent-container {
+    position: relative;
+}
+
+/* centered animation removed — dialog will be used instead */
+
+
+
+.bottombar {
+    margin-top: 2px;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    width: 0%;
+        transition: width 300ms ease-in-out;
+
+}
+
+.active > .bottombar{
+    position: relative;
+    transition: width 300ms ease-in-out;
+    width: 100%;
+}
+
+a {
+    cursor: pointer;
+
+}
+
+.content {
+    height: 100%; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-body {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;    
+    align-items: flex-start;
+
+}
+
+/* no-op placeholder removed */
+
+
+
+.project-body > * {
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.component-body {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;    
+    flex-grow: 1;
+
+}
+
+
+
+.component-body > * {
+    width: 30%;
+    margin-bottom: 20px;
+
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-container > a > i{
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.header-container > a {
+    text-decoration: none;
+    color: white;
+}
+
+
+

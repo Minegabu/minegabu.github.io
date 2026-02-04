@@ -1,0 +1,19 @@
+<div class="card flex justify-content-center" (focus)="(true)">
+  <p-dialog
+    [modal]="true"
+    [(visible)]="visible"
+    
+    [dismissableMask]="true"
+    [closeOnEscape]="true"
+  >
+    <ng-template #headless>
+      <div class="mainbody">
+        <img [src]="imageUrl" />
+        <div class="flexbody">
+          <p>{{ description }}</p>
+          <p>{{mainDescription}}</p>
+        </div>
+      </div>
+    </ng-template>
+  </p-dialog>
+</div>

@@ -1,0 +1,45 @@
+.mainbody{
+
+    border: 1px solid white;
+    border-radius: 10px;
+    z-index: 1;
+    overflow: hidden;
+    padding: 1px;
+    background-color: rgb(18,18,18);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+      transition: transform 0.25s ease;
+
+}
+
+.img {
+    border-radius: 10px;
+}
+
+.flexbody{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.img {
+    aspect-ratio: 422/219;
+    width:100%;
+    height: 60%;
+}
+
+
+.mainbody:hover {
+    transition: width height ease 0.2s;
+  transform: scale(1.1);
+}
